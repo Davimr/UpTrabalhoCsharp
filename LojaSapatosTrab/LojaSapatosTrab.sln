@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LojaSapatos", "LojaSapatos\LojaSapatos.csproj", "{4960EFA0-B27E-48E0-BDF2-1AA04C939F79}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LojaSapatosWPF", "LojaSapatosWPF\LojaSapatosWPF.csproj", "{7976E18D-C111-4857-A41F-6505A0E53C7F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{4960EFA0-B27E-48E0-BDF2-1AA04C939F79}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4960EFA0-B27E-48E0-BDF2-1AA04C939F79}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4960EFA0-B27E-48E0-BDF2-1AA04C939F79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7976E18D-C111-4857-A41F-6505A0E53C7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7976E18D-C111-4857-A41F-6505A0E53C7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7976E18D-C111-4857-A41F-6505A0E53C7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7976E18D-C111-4857-A41F-6505A0E53C7F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
