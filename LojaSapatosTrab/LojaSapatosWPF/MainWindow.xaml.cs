@@ -24,5 +24,24 @@ namespace LojaSapatosWPF
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            switch ((sender as Button).Name)
+            {
+                case "BtnClientes":
+                    Window windowCliente = new WindowClientes();
+                    windowCliente.ShowDialog();
+                    break;
+                case "BtnSapato":
+                    Window windowSapato = new WindowSapato();
+                    windowSapato.ShowDialog();
+                    break;
+                case "BtnVendas":
+                    Window windowVendas = new WindowSapato();
+                    windowVendas.ShowDialog();
+                    break;
+            }
+        }
     }
 }

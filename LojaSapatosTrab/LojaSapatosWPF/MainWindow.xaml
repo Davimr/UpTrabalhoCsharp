@@ -7,6 +7,10 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Button Content="Clientes" x:Name="BtnClientes" HorizontalAlignment="Center" VerticalAlignment="Top" Width="74" RenderTransformOrigin="-0.464,-1.168" Background="#FFA85353" BorderBrush="White" Foreground="White" FontSize="14" Margin="280,143,438,0" Click="Button_Click"/>
+        <Button Content="Sapato" x:Name="BtnSapato" HorizontalAlignment="Center" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.072,-1.021" Background="#FFA85353" BorderBrush="White" Foreground="White" FontSize="14" Margin="360,143,358,0" Click="Button_Click"/>
+        <Button Content="Vendas" x:Name="BtnVendas" HorizontalAlignment="Center" VerticalAlignment="Top" Width="74" Background="#FFA85353" BorderBrush="White" Foreground="White" FontSize="14" Margin="440,143,278,0" Click="Button_Click"/>
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Calçados NosSeusPes" VerticalAlignment="Top" FontSize="22" FontFamily="Harlow Solid Italic" Grid.IsSharedSizeScope="True" Foreground="#FF34527E" Margin="0,40,0,0"/>
+
     </Grid>
 </Window>
