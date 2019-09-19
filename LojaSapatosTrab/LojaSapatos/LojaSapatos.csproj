@@ -51,7 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Estoque.cs" />
+    <Compile Include="ItemEstoque.cs" />
     <Compile Include="Endereco.cs" />
     <Compile Include="PessoaJuridica .cs" />
     <Compile Include="PessoaFisica .cs" />

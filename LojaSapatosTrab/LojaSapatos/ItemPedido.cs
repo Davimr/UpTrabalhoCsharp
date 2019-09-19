@@ -11,5 +11,6 @@ namespace LojaSapatos
         public int Id { get; set; }
         public int Quantidade { get; set; }
         public Sapato Sapato { get; set; }
+        public Venda Venda { get; set; }
     }
 }
