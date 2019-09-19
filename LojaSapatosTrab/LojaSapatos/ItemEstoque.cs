@@ -13,7 +13,7 @@ namespace LojaSapatos
         
         public int Quantidade { get; set; }
 
-        [InverseProperty("Quantidade")]
+        [InverseProperty("ItemEstoque")]
         public IList<Sapato> Sapatos { get; set; }
     }
 }

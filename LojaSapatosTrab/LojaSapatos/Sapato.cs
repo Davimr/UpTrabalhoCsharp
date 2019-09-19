@@ -12,7 +12,7 @@ namespace LojaSapatos
         public int Id { get; set; }
         public Modelo Modelo { get; set; }
 
-        public ItemEstoque Quantidade { get; set; }
+        public ItemEstoque ItemEstoque { get; set; }
         public int Tamanho { get; set; }
 
         [InverseProperty("Sapato")]
