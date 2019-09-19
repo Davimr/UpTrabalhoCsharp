@@ -20,7 +20,7 @@ namespace LojaSapatos
 
         public virtual DbSet<Modelo> Modelos { get; set; }
         public virtual DbSet<Sapato> Sapatos { get; set; }
-        public virtual DbSet<ItemEstoque> Estoques { get; set; }
+        public virtual DbSet<ItemEstoque> ItensEstoque { get; set; }
         public virtual DbSet<ItemPedido> ItensPedido { get; set; }
         public virtual DbSet<Venda> Vendas { get; set; }
         public virtual DbSet<Pessoa> Pessoas { get; set; }
