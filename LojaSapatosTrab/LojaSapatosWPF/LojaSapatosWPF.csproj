@@ -61,6 +61,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModel\ClienteViewModel.cs" />
     <Compile Include="WindowClientes.xaml.cs">
       <DependentUpon>WindowClientes.xaml</DependentUpon>
     </Compile>
@@ -122,8 +123,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="ViewModel\" />
+    <ProjectReference Include="..\LojaSapatos\LojaSapatos.csproj">
+      <Project>{4960EFA0-B27E-48E0-BDF2-1AA04C939F79}</Project>
+      <Name>LojaSapatos</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

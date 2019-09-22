@@ -6,7 +6,6 @@ namespace LojaSapatos
 {
     public class Pessoa : Endereco
     {
-        
         public int Id { get; set; }
         [Required]
         public string Nome { get; set; }

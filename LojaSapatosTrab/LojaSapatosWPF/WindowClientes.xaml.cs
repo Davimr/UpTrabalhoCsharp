@@ -19,9 +19,33 @@ namespace LojaSapatosWPF
     /// </summary>
     public partial class WindowClientes : Window
     {
+        public ViewModel.ClienteViewModel ClienteViewModel { get; set; }
         public WindowClientes()
         {
             InitializeComponent();
+            this.ClienteViewModel = new ViewModel.ClienteViewModel();
+            this.DataContext = this.ClienteViewModel;
         }
+
+        private void btnVoltar_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnSalvar_Click(object sender, RoutedEventArgs e)
+        {
+            ClienteViewModel.Salvar();
+        }
+
+        private void btnAdicionar_Click(object sender, RoutedEventArgs e)
+        {
+            ClienteViewModel.Adicionar();
+        }
+
+        private void btnRemover_Click(object sender, RoutedEventArgs e)
+        {
+            ClienteViewModel.Remover();
+        }
+
     }
 }
