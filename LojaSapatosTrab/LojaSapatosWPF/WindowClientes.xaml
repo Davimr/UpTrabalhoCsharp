@@ -6,6 +6,10 @@
         xmlns:local="clr-namespace:LojaSapatosWPF"
         mc:Ignorable="d"
         Title="WindowClientes" Height="450" Width="800">
+    <Window.Resources>
+        <CollectionViewSource x:Key="ClientesList" Source="{Binding Clientes}" />
+    </Window.Resources>
+
     <Grid Margin="0,11,0,14">
         <Grid.RowDefinitions>
             <RowDefinition Height="186*"/>
@@ -23,9 +27,11 @@
         </Grid.ColumnDefinitions>
         <DataGrid Grid.Row="0" ItemsSource="{Binding Clientes}" AutoGenerateColumns="False">
             <DataGrid.Columns>
+                
                 <DataGridTextColumn
                     Header="Clientes">
                 </DataGridTextColumn>
+
             </DataGrid.Columns>
         </DataGrid>
         <DataGrid Grid.Row="1" ItemsSource="{Binding Vendas}" AutoGenerateColumns="False">
@@ -50,10 +56,10 @@
         <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" Text="{Binding ClienteSelecionado.Nome}" VerticalAlignment="Top" Width="120"/>
         <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,38,0,0" TextWrapping="Wrap" Text="{Binding ClienteSelecionado.Cpf}" VerticalAlignment="Top" Width="120"/>
         <DatePicker HorizontalAlignment="Left" Width="120" Height="23" SelectedDate="{Binding ClienteSelecionado.DataNascimento}" Grid.Column="1" Grid.Row="0" x:Name="NascimentoDate" Margin="10,66,0,93"></DatePicker>
-        <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="266,10,0,0" TextWrapping="Wrap" Text="{Binding ClienteSelecionado.Rua}" VerticalAlignment="Top" Width="120"/>
-        <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="266,38,0,0" TextWrapping="Wrap" Text="{Binding ClienteSelecionado.Numero}" VerticalAlignment="Top" Width="120"/>
-        <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="266,66,0,0" TextWrapping="Wrap" Text="{Binding ClienteSelecionado.Complemento}" VerticalAlignment="Top" Width="120"/>
-        <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="266,94,0,0" TextWrapping="Wrap" Text="{Binding ClienteSelecionado.Cep}" VerticalAlignment="Top" Width="120"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="266,10,0,0" TextWrapping="Wrap" Text="{Binding ClienteSelecionado.Endereco.Rua}" VerticalAlignment="Top" Width="120"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="266,38,0,0" TextWrapping="Wrap" Text="{Binding ClienteSelecionado.Endereco.Numero}" VerticalAlignment="Top" Width="120"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="266,66,0,0" TextWrapping="Wrap" Text="{Binding ClienteSelecionado.Endereco.Complemento}" VerticalAlignment="Top" Width="120"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="266,94,0,0" TextWrapping="Wrap" Text="{Binding ClienteSelecionado.Endereco.Cep}" VerticalAlignment="Top" Width="120"/>
 
 
 

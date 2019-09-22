@@ -92,6 +92,7 @@ namespace LojaSapatosWPF.ViewModel
                 this.Context.Pessoas.ToList());
 
             Clientes.Add(pf1);
+            Clientes.Add(pj1);
 
             ClienteSelecionado = this.Clientes.FirstOrDefault();
         }
