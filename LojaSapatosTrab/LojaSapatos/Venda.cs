@@ -15,6 +15,8 @@ namespace LojaSapatos
         public IList<ItemPedido> ItensPedido { get; set; }
         public Decimal ValorTotal { get; set; }
         public int QuantidadeTotal { get; set; }
-        public Pessoa Cliente { get; set; }
+        public PessoaFisica ClienteFisica { get; set; }
+
+        public PessoaJuridica ClienteJuridica { get; set; }
     }
 }

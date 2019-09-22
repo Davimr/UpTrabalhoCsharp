@@ -18,15 +18,17 @@ namespace LojaSapatos
 
         }
 
-        public virtual DbSet<Modelo> Modelos { get; set; }
-        public virtual DbSet<Sapato> Sapatos { get; set; }
-        public virtual DbSet<ItemEstoque> ItensEstoque { get; set; }
-        public virtual DbSet<ItemPedido> ItensPedido { get; set; }
-        public virtual DbSet<Venda> Vendas { get; set; }
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<ItemEstoque>()
+                .HasRequired<Sapato>(i => i.Sapato)
+                .WithOptional(s => s.ItemEstoque);
+        }
+
+
         public virtual DbSet<Pessoa> Pessoas { get; set; }
-        public virtual DbSet<Endereco> Enderecos { get; set; }
-        public virtual DbSet<PessoaFisica> PessoasFisica { get; set; }
-        public virtual DbSet<PessoaJuridica> PessoasJuridica { get; set; }
+       
 
         // Add a DbSet for each entity type that you want to include in your model. For more information 
         // on configuring and using a Code First model, see http://go.microsoft.com/fwlink/?LinkId=390109.

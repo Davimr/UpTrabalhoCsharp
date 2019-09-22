@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LojaSapatos
 {
@@ -7,5 +9,8 @@ namespace LojaSapatos
         public int Id { get; set; }
         public string Cnpj { get; set; }
         public string RazaoSocial { get; set; }
+
+        [InverseProperty("ClienteJuridica")]
+        public IList<Venda> VendasJuridica { get; set; }
     }
 }
