@@ -53,6 +53,15 @@
   <ItemGroup>
     <Compile Include="ItemEstoque.cs" />
     <Compile Include="Endereco.cs" />
+    <Compile Include="Migrations\201909221823121_InitialCreate.cs" />
+    <Compile Include="Migrations\201909221823121_InitialCreate.Designer.cs">
+      <DependentUpon>201909221823121_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909221910464_220920191610.cs" />
+    <Compile Include="Migrations\201909221910464_220920191610.Designer.cs">
+      <DependentUpon>201909221910464_220920191610.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PessoaJuridica .cs" />
     <Compile Include="PessoaFisica .cs" />
     <Compile Include="Pessoa.cs" />
@@ -67,6 +76,14 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201909221823121_InitialCreate.resx">
+      <DependentUpon>201909221823121_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909221910464_220920191610.resx">
+      <DependentUpon>201909221910464_220920191610.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

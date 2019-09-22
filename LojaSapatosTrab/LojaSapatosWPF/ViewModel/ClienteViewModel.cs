@@ -10,12 +10,10 @@ namespace LojaSapatosWPF.ViewModel
 {
     public class ClienteViewModel
     {
-        public LojaSapatos.PessoaFisica ClienteFisica { get; set; }
-
-        public LojaSapatos.Endereco Endereco { get; set; }
-
         public ObservableCollection<Pessoa> Clientes { get; set; }
+        public ObservableCollection<Sapato> Sapatos { get; set; }
         public Pessoa ClienteSelecionado { get; set; }
+        public Sapato SapatoSelecionado { get; set; }
         private SapatoModel Context { get; set; }
         public ClienteViewModel()
         {
@@ -66,6 +64,7 @@ namespace LojaSapatosWPF.ViewModel
             {
                 Tamanho = 40,
                 Modelo = modelo2,
+                Marca = "Adidas"
             };
             ItemEstoque item1Estoque = new LojaSapatos.ItemEstoque()
             {
@@ -88,13 +87,15 @@ namespace LojaSapatosWPF.ViewModel
 
 
             this.Context = new SapatoModel();
-            this.Clientes = new ObservableCollection<Pessoa>(
-                this.Context.Pessoas.ToList());
+            this.Clientes = new ObservableCollection<Pessoa>(this.Context.Pessoas.ToList());
+            this.Sapatos = new ObservableCollection<Sapato>(this.Context.Sapatos.ToList());
 
             Clientes.Add(pf1);
             Clientes.Add(pj1);
+            Sapatos.Add(sapato1);
 
             ClienteSelecionado = this.Clientes.FirstOrDefault();
+            SapatoSelecionado = this.Sapatos.FirstOrDefault();
         }
 
         public void Salvar()
@@ -107,6 +108,7 @@ namespace LojaSapatosWPF.ViewModel
             Pessoa p = new Pessoa();
             this.Clientes.Add(p);
             ClienteSelecionado = p;
+            
         }
 
         public void Remover()

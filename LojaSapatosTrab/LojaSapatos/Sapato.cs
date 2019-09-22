@@ -13,6 +13,8 @@ namespace LojaSapatos
         
         public Modelo Modelo { get; set; }
 
+        public String Marca { get; set; }
+
         public ItemEstoque ItemEstoque { get; set; }
         public int Tamanho { get; set; }
 

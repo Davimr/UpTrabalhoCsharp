@@ -6,7 +6,40 @@
         xmlns:local="clr-namespace:LojaSapatosWPF"
         mc:Ignorable="d"
         Title="WindowSapato" Height="450" Width="800">
-    <Grid>
+    <Grid Margin="0,11,0,14">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="186*"/>
+            <RowDefinition Height="187*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="0"/>
+            <RowDefinition Height="1"/>
+            <RowDefinition Height="8"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <DataGrid Grid.Row="0" ItemsSource="{Binding Sapatos}" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+
+                <DataGridTextColumn
+                    Header="Sapatos">
+                </DataGridTextColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" Text="{Binding SapatoSelecionado.Marca}" VerticalAlignment="Top" Width="120"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,38,0,0" TextWrapping="Wrap" Text="{Binding SapatoSelecionado.Tamanho}" VerticalAlignment="Top" Width="120"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,66,0,0" TextWrapping="Wrap" Text="{Binding SapatoSelecionado.Modelo.Material}" VerticalAlignment="Top" Width="120"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="266,10,0,0" TextWrapping="Wrap" Text="{Binding SapatoSelecionado.Modelo.Cor}" VerticalAlignment="Top" Width="120"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="266,38,0,0" TextWrapping="Wrap" Text="{Binding SapatoSelecionado.Modelo.PossuiCadarco}" VerticalAlignment="Top" Width="120"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="266,66,0,0" TextWrapping="Wrap" Text="{Binding SapatoSelecionado.Modelo.Preco}" VerticalAlignment="Top" Width="120"/>
         
+        
+
     </Grid>
 </Window>
