@@ -26,13 +26,7 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <DataGrid Grid.Row="0" ItemsSource="{Binding Clientes}" AutoGenerateColumns="False">
-            <DataGrid.Columns>
-                
-                <DataGridTextColumn
-                    Header="Clientes">
-                </DataGridTextColumn>
 
-            </DataGrid.Columns>
         </DataGrid>
         <DataGrid Grid.Row="1" ItemsSource="{Binding Vendas}" AutoGenerateColumns="False">
             <DataGrid.Columns>
