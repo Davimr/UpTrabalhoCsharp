@@ -29,6 +29,7 @@ namespace LojaSapatos
 
         public virtual DbSet<Pessoa> Pessoas { get; set; }
         public virtual DbSet<Sapato> Sapatos { get; set; }
+        public virtual DbSet<Venda> Vendas { get; set; }
        
 
         // Add a DbSet for each entity type that you want to include in your model. For more information 

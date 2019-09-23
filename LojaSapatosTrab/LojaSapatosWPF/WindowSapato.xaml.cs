@@ -19,9 +19,32 @@ namespace LojaSapatosWPF
     /// </summary>
     public partial class WindowSapato : Window
     {
+        public ViewModel.SapatoViewModel SapatoViewModel { get; set; }
         public WindowSapato()
         {
             InitializeComponent();
+            this.SapatoViewModel = new ViewModel.SapatoViewModel();
+            this.DataContext = this.SapatoViewModel;
+        }
+
+        private void btnVoltar_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnSalvar_Click(object sender, RoutedEventArgs e)
+        {
+            SapatoViewModel.Salvar();
+        }
+
+        private void btnAdicionar_Click(object sender, RoutedEventArgs e)
+        {
+            SapatoViewModel.Adicionar();
+        }
+
+        private void btnRemover_Click(object sender, RoutedEventArgs e)
+        {
+            SapatoViewModel.Remover();
         }
     }
 }

@@ -38,7 +38,7 @@ namespace LojaSapatosWPF
                     windowSapato.ShowDialog();
                     break;
                 case "BtnVendas":
-                    Window windowVendas = new WindowSapato();
+                    Window windowVendas = new WindowVendas();
                     windowVendas.ShowDialog();
                     break;
             }

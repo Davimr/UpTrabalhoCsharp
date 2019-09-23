@@ -19,9 +19,32 @@ namespace LojaSapatosWPF
     /// </summary>
     public partial class WindowVendas : Window
     {
+        public ViewModel.VendaViewModel VendaViewModel { get; set; }
         public WindowVendas()
         {
             InitializeComponent();
+            this.VendaViewModel = new ViewModel.VendaViewModel();
+            this.DataContext = this.VendaViewModel;
+        }
+
+        private void btnVoltar_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnSalvar_Click(object sender, RoutedEventArgs e)
+        {
+            VendaViewModel.Salvar();
+        }
+
+        private void btnAdicionar_Click(object sender, RoutedEventArgs e)
+        {
+            VendaViewModel.Adicionar();
+        }
+
+        private void btnRemover_Click(object sender, RoutedEventArgs e)
+        {
+            VendaViewModel.Remover();
         }
     }
 }

@@ -61,6 +61,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModel\VendaViewModel .cs" />
+    <Compile Include="ViewModel\SapatoViewModel.cs" />
     <Compile Include="ViewModel\ClienteViewModel.cs" />
     <Compile Include="WindowClientes.xaml.cs">
       <DependentUpon>WindowClientes.xaml</DependentUpon>

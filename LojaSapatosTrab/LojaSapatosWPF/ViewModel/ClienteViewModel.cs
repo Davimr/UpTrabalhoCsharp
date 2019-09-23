@@ -11,9 +11,7 @@ namespace LojaSapatosWPF.ViewModel
     public class ClienteViewModel
     {
         public ObservableCollection<Pessoa> Clientes { get; set; }
-        public ObservableCollection<Sapato> Sapatos { get; set; }
         public Pessoa ClienteSelecionado { get; set; }
-        public Sapato SapatoSelecionado { get; set; }
         private SapatoModel Context { get; set; }
         public ClienteViewModel()
         {
@@ -46,56 +44,16 @@ namespace LojaSapatosWPF.ViewModel
                 Cnpj = "11.111.111/0001-11",
                 Endereco = end2,
             };
-            Modelo modelo1 = new LojaSapatos.Modelo()
-            {
-                Cor = "Preto",
-                Material = "Couro",
-                PossuiCadarco = false,
-                Preco = 109.90M,
-            };
-            Modelo modelo2 = new LojaSapatos.Modelo()
-            {
-                Cor = "Branco",
-                Material = "Tecido",
-                PossuiCadarco = true,
-                Preco = 99.90M
-            };
-            Sapato sapato1 = new LojaSapatos.Sapato()
-            {
-                Tamanho = 40,
-                Modelo = modelo2,
-                Marca = "Adidas"
-            };
-            ItemEstoque item1Estoque = new LojaSapatos.ItemEstoque()
-            {
-                Quantidade = 28,
-                Sapato = sapato1,
-            };
-            Venda venda1 = new Venda()
-            {
-                ClienteFisica = pf1,
-                DataVenda = new DateTime(2019, 09, 22),
-                QuantidadeTotal = 2,
-                ValorTotal = 234,
-            };
-            ItemPedido itemPedido = new LojaSapatos.ItemPedido()
-            {
-                Quantidade = 1,
-                Sapato = sapato1,
-                Venda = venda1,
-            };
+           
 
 
             this.Context = new SapatoModel();
             this.Clientes = new ObservableCollection<Pessoa>(this.Context.Pessoas.ToList());
-            this.Sapatos = new ObservableCollection<Sapato>(this.Context.Sapatos.ToList());
 
             Clientes.Add(pf1);
             Clientes.Add(pj1);
-            Sapatos.Add(sapato1);
 
             ClienteSelecionado = this.Clientes.FirstOrDefault();
-            SapatoSelecionado = this.Sapatos.FirstOrDefault();
         }
 
         public void Salvar()
