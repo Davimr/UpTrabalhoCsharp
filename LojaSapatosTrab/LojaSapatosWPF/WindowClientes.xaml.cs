@@ -47,5 +47,10 @@ namespace LojaSapatosWPF
             ClienteViewModel.Remover();
         }
 
+        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+           var x = e.AddedItems[0];
+            ClienteViewModel.ClienteSelecionado = (LojaSapatos.Pessoa)x;
+        }
     }
 }
