@@ -15,37 +15,9 @@ namespace LojaSapatosWPF.ViewModel
         private SapatoModel ContextSapato { get; set; }
         public SapatoViewModel()
         {
-            Modelo modelo1 = new LojaSapatos.Modelo()
-            {
-                Cor = "Preto",
-                Material = "Couro",
-                PossuiCadarco = false,
-                Preco = 109.90M,
-            };
-            Modelo modelo2 = new LojaSapatos.Modelo()
-            {
-                Cor = "Branco",
-                Material = "Tecido",
-                PossuiCadarco = true,
-                Preco = 99.90M
-            };
-            Sapato sapato1 = new LojaSapatos.Sapato()
-            {
-                Tamanho = 40,
-                Modelo = modelo2,
-                Marca = "Adidas"
-            };
-            ItemEstoque item1Estoque = new LojaSapatos.ItemEstoque()
-            {
-                Quantidade = 28,
-                Sapato = sapato1,
-            };
             
-
             this.ContextSapato = new SapatoModel();
             this.Sapatos = new ObservableCollection<Sapato>(this.ContextSapato.Sapatos.ToList());
-
-            Sapatos.Add(sapato1);
 
             SapatoSelecionado = this.Sapatos.FirstOrDefault();
         }
