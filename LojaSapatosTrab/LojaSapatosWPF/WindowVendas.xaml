@@ -21,11 +21,11 @@
 
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <DataGrid Grid.Row="0" ItemsSource="{Binding Vendas}" AutoGenerateColumns="False">
+        <DataGrid Grid.Row="0" ItemsSource="{Binding Cliente.Clientes}" AutoGenerateColumns="False">
             <DataGrid.Columns>
 
                 <DataGridTextColumn
-                    Header="Vendas">
+                    Header="Clientes" Binding="{Binding Nome}">
                 </DataGridTextColumn>
 
             </DataGrid.Columns>

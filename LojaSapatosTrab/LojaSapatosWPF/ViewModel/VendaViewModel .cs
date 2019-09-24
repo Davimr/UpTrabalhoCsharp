@@ -12,16 +12,20 @@ namespace LojaSapatosWPF.ViewModel
     {
         public ObservableCollection<Venda> Vendas { get; set; }
         public Venda VendaSelecionada { get; set; }
+
+        public ClienteViewModel Cliente { get; set; }
         private SapatoModel ContextVenda { get; set; }
         public VendaViewModel()
         {
             Venda venda1 = new LojaSapatos.Venda()
             {
+                
                 DataVenda = new DateTime(2019, 09, 23),
                 QuantidadeTotal = 3,
                 ValorTotal = 234.90M,
-            };            
+            };
 
+            this.Cliente = new ClienteViewModel();
             this.ContextVenda = new SapatoModel();
             this.Vendas = new ObservableCollection<Venda>(this.ContextVenda.Vendas.ToList());
 
