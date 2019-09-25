@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LojaSapatos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -32,25 +33,39 @@ namespace LojaSapatosWPF
             this.Close();
         }
 
-        private void btnSalvar_Click(object sender, RoutedEventArgs e)
-        {
-            ClienteViewModel.Salvar();
-        }
-
         private void btnAdicionar_Click(object sender, RoutedEventArgs e)
         {
             ClienteViewModel.Adicionar();
-        }
-
-        private void btnRemover_Click(object sender, RoutedEventArgs e)
-        {
-            ClienteViewModel.Remover();
         }
 
         private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
            var x = e.AddedItems[0];
             ClienteViewModel.ClienteSelecionado = (LojaSapatos.Pessoa)x;
+
+            Window PaginaEspecifica = CarregarAbaEspecificaPessoa(ClienteViewModel.ClienteSelecionado);
+            PaginaEspecifica.ShowDialog();
+        }
+
+        static public Window CarregarAbaEspecificaPessoa(Pessoa pessoa)
+        {
+
+            if (pessoa is PessoaFisica)
+            {
+                var PaginaEspecifica = new WindowPessoaFisica();
+                PaginaEspecifica.Cliente = (PessoaFisica)pessoa;
+                return PaginaEspecifica;
+
+            }
+            else if (pessoa is PessoaJuridica)
+            {
+                var PaginaEspecifica = new WindowPessoaJuridica();
+                PaginaEspecifica.Pessoa = (PessoaJuridica)pessoa;
+                return PaginaEspecifica;
+            }
+            return null;
         }
     }
+
+
 }

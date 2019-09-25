@@ -19,9 +19,30 @@ namespace LojaSapatosWPF
     /// </summary>
     public partial class WindowPessoaFisica : Window
     {
+        public LojaSapatos.PessoaFisica Cliente { get; set; }
+        public ViewModel.ClienteViewModel ClienteViewModel { get; set; }
         public WindowPessoaFisica()
         {
             InitializeComponent();
+            this.DataContext = this;
+            this.ClienteViewModel = new ViewModel.ClienteViewModel();
+        }
+
+        private void btnVoltar_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnSalvar_Click(object sender, RoutedEventArgs e)
+        {
+            ClienteViewModel.ClienteSelecionado = Cliente;
+            ClienteViewModel.Salvar();
+        }
+
+        private void btnRemover_Click(object sender, RoutedEventArgs e)
+        {
+            ClienteViewModel.ClienteSelecionado = Cliente;
+            ClienteViewModel.Remover();
         }
     }
 }

@@ -70,6 +70,9 @@
     <Compile Include="WindowPessoaFisica.xaml.cs">
       <DependentUpon>WindowPessoaFisica.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WindowPessoaJuridica.xaml.cs">
+      <DependentUpon>WindowPessoaJuridica.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WindowSapato.xaml.cs">
       <DependentUpon>WindowSapato.xaml</DependentUpon>
     </Compile>
@@ -93,6 +96,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WindowPessoaFisica.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowPessoaJuridica.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
