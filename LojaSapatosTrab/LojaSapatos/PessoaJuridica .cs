@@ -9,8 +9,5 @@ namespace LojaSapatos
         public int Id { get; set; }
         public string Cnpj { get; set; }
         public string RazaoSocial { get; set; }
-
-        [InverseProperty("ClienteJuridica")]
-        public IList<Venda> VendasJuridica { get; set; }
     }
 }

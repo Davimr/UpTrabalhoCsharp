@@ -42,6 +42,12 @@ namespace LojaSapatosWPF
             VendaViewModel.Adicionar();
         }
 
+        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var x = e.AddedItems[0];
+            VendaViewModel.VendaSelecionada = (LojaSapatos.Venda)x;
+        }
+
         private void btnRemover_Click(object sender, RoutedEventArgs e)
         {
             VendaViewModel.Remover();

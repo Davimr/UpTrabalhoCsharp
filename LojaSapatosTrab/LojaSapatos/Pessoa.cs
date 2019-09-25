@@ -10,5 +10,7 @@ namespace LojaSapatos
         [Required]
         public string Nome { get; set; }
         public Endereco Endereco { get; set; }
+        [InverseProperty("Cliente")]
+        public IList<Venda> Vendas { get; set; }
     }
 }

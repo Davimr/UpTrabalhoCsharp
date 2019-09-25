@@ -6,6 +6,11 @@
         xmlns:local="clr-namespace:LojaSapatosWPF"
         mc:Ignorable="d"
         Title="WindowVendas" Height="450" Width="800">
+
+    <Window.Resources>
+        <CollectionViewSource x:Key="ClientesList" Source="{Binding Vendas}" />
+    </Window.Resources>
+    
     <Grid Margin="0,11,0,14">
         <Grid.RowDefinitions>
             <RowDefinition Height="186*"/>
@@ -21,13 +26,14 @@
 
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <DataGrid Grid.Row="0" ItemsSource="{Binding Cliente.Clientes}" AutoGenerateColumns="False">
+        <DataGrid Grid.Row="0" ItemsSource="{Binding Vendas}" AutoGenerateColumns="False" SelectionChanged="DataGrid_SelectionChanged">
             <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Id}" Header="Id" Width="auto" />
+                <DataGridTextColumn Binding="{Binding DataVenda}" Header="Data da Venda" Width="auto" />
+                <DataGridTextColumn Binding="{Binding ValorTotal}" Header="Valor Total" Width="auto" />
+                <DataGridTextColumn Binding="{Binding QuantidadeTotal}" Header="Qtd" Width="auto" />
 
-                <DataGridTextColumn
-                    Header="Clientes" Binding="{Binding Nome}">
-                </DataGridTextColumn>
-
+                <DataGridTextColumn Binding="{Binding PessoaFisica.Nome}" Header="Cliente" Width="auto" />
             </DataGrid.Columns>
         </DataGrid>
 

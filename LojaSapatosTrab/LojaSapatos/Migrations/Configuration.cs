@@ -76,7 +76,7 @@ namespace LojaSapatos.Migrations
             };
             Venda venda1 = new Venda()
             {
-                ClienteFisica = pf1,
+                Cliente = pf1,
                 DataVenda = new DateTime(2019, 09, 22),
                 QuantidadeTotal = 2,
                 ValorTotal = 234,

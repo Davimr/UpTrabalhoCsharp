@@ -9,8 +9,5 @@ namespace LojaSapatos
         public int Id { get; set; }
         public string Cpf { get; set; }
         public DateTime DataNascimento { get; set; }
-
-        [InverseProperty("ClienteFisica")]
-        public IList<Venda> VendasFisica { get; set; }
     }
 }
