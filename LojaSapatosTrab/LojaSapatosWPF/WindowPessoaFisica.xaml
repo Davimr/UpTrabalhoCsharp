@@ -25,6 +25,12 @@
         <Button Content="Salvar" Grid.Column="1" HorizontalAlignment="Left" Margin="151,180,0,0" VerticalAlignment="Top" Width="75" Click="btnSalvar_Click"/>
         <Button Content="Deletar" Grid.Column="1" HorizontalAlignment="Left" Margin="231,180,0,0" VerticalAlignment="Top" Width="75" Click="btnRemover_Click"/>
         <Button Content="Voltar" Grid.Column="1" HorizontalAlignment="Left" Margin="311,180,0,0" VerticalAlignment="Top" Width="75" Click="btnVoltar_Click"/>
+        <Button Content="Novo" Grid.Column="1" HorizontalAlignment="Left" Margin="71,180,0,0" VerticalAlignment="Top" Width="75" Click="btnAdicionar_Click"/>
+        <DataGrid HorizontalAlignment="Left" Height="209" Grid.Row="1" VerticalAlignment="Top" Width="396" ItemsSource="{Binding VendaViewModel.Vendas}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Id}" Header="Vendas" Width="auto"/>
+            </DataGrid.Columns>
+        </DataGrid>
 
     </Grid>
 </Window>

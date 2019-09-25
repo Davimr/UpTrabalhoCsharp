@@ -21,11 +21,13 @@ namespace LojaSapatosWPF
     {
         public LojaSapatos.PessoaFisica Cliente { get; set; }
         public ViewModel.ClienteViewModel ClienteViewModel { get; set; }
+        public ViewModel.VendaViewModel VendaViewModel { get; set; }
         public WindowPessoaFisica()
         {
             InitializeComponent();
             this.DataContext = this;
             this.ClienteViewModel = new ViewModel.ClienteViewModel();
+            this.VendaViewModel = new ViewModel.VendaViewModel();
         }
 
         private void btnVoltar_Click(object sender, RoutedEventArgs e)
@@ -43,6 +45,11 @@ namespace LojaSapatosWPF
         {
             ClienteViewModel.ClienteSelecionado = Cliente;
             ClienteViewModel.Remover();
+        }
+
+        private void btnAdicionar_Click(object sender, RoutedEventArgs e)
+        {
+            ClienteViewModel.Adicionar();
         }
     }
 }

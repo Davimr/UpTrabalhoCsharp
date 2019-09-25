@@ -33,11 +33,6 @@ namespace LojaSapatosWPF
             this.Close();
         }
 
-        private void btnAdicionar_Click(object sender, RoutedEventArgs e)
-        {
-            ClienteViewModel.Adicionar();
-        }
-
         private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
            var x = e.AddedItems[0];
