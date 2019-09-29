@@ -61,11 +61,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModel\ModeloViewModel.cs" />
     <Compile Include="ViewModel\VendaViewModel .cs" />
     <Compile Include="ViewModel\SapatoViewModel.cs" />
     <Compile Include="ViewModel\ClienteViewModel.cs" />
     <Compile Include="WindowClientes.xaml.cs">
       <DependentUpon>WindowClientes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WindowModelo.xaml.cs">
+      <DependentUpon>WindowModelo.xaml</DependentUpon>
     </Compile>
     <Compile Include="WindowPessoaFisica.xaml.cs">
       <DependentUpon>WindowPessoaFisica.xaml</DependentUpon>
@@ -92,6 +96,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="WindowClientes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowModelo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

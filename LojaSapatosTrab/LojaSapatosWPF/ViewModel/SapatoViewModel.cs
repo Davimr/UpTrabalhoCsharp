@@ -15,7 +15,6 @@ namespace LojaSapatosWPF.ViewModel
         private SapatoModel ContextSapato { get; set; }
         public SapatoViewModel()
         {
-            
             this.ContextSapato = new SapatoModel();
             this.Sapatos = new ObservableCollection<Sapato>(this.ContextSapato.Sapatos.ToList());
 

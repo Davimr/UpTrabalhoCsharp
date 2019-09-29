@@ -1,0 +1,44 @@
+﻿using LojaSapatos;
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LojaSapatosWPF.ViewModel
+{
+    public class ModeloViewModel
+    {
+        public ObservableCollection<Modelo> Modelos { get; set; }
+        public Modelo ModeloSelecionado { get; set; }
+        private SapatoModel ContextModelo { get; set; }
+        public ModeloViewModel()
+        {
+            ContextModelo = new SapatoModel();
+            Modelos = new ObservableCollection<Modelo>(ContextModelo.Modelos.ToList());
+
+            ModeloSelecionado = this.Modelos.FirstOrDefault();
+        }
+
+        public void Adicionar()
+        {
+            Modelo modelo = new Modelo();
+            this.Modelos.Add(modelo);
+            this.ModeloSelecionado = modelo;
+        }
+
+        public void Remover()
+        {
+            this.ContextModelo.Modelos.Remove(ModeloSelecionado);
+            this.Modelos.Remove(ModeloSelecionado);
+            ModeloSelecionado = this.Modelos.FirstOrDefault();
+        }
+
+
+        public void Salvar()
+        {
+            this.ContextModelo.SaveChanges();
+        }
+    }
+}

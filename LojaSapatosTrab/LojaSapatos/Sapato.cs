@@ -10,7 +10,7 @@ namespace LojaSapatos
     public class Sapato
     {
         public int Id { get; set; }
-        
+
         public Modelo Modelo { get; set; }
 
         public String Marca { get; set; }

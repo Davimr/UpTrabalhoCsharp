@@ -33,7 +33,7 @@
                 <DataGridTextColumn Binding="{Binding ValorTotal}" Header="Valor Total" Width="auto" />
                 <DataGridTextColumn Binding="{Binding QuantidadeTotal}" Header="Qtd" Width="auto" />
 
-                <DataGridTextColumn Binding="{Binding PessoaFisica.Nome}" Header="Cliente" Width="auto" />
+                <DataGridTextColumn Binding="{Binding Cliente.Nome}" Header="Cliente" Width="auto" />
             </DataGrid.Columns>
         </DataGrid>
 

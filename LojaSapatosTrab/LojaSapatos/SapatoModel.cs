@@ -2,6 +2,7 @@ namespace LojaSapatos
 {
     using System;
     using System.Data.Entity;
+    using System.Data.Entity.ModelConfiguration.Conventions;
     using System.Linq;
 
     public class SapatoModel : DbContext
@@ -23,13 +24,25 @@ namespace LojaSapatos
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<ItemEstoque>()
                 .HasRequired<Sapato>(i => i.Sapato)
-                .WithOptional(s => s.ItemEstoque);
+                .WithOptional(s => s.ItemEstoque)
+                .WillCascadeOnDelete(true);
+
+            modelBuilder.Entity<Sapato>()
+                .HasOptional(s => s.Modelo)
+                .WithOptionalDependent()
+                .WillCascadeOnDelete(true);
+
+            modelBuilder.Entity<ItemPedido>()
+                .HasRequired<Sapato>(i => i.Sapato)
+                .WithMany(s => s.ItensPedido)
+                .WillCascadeOnDelete(true);
         }
 
 
         public virtual DbSet<Pessoa> Pessoas { get; set; }
         public virtual DbSet<Sapato> Sapatos { get; set; }
         public virtual DbSet<Venda> Vendas { get; set; }
+        public virtual DbSet<Modelo> Modelos { get; set; }
        
 
         // Add a DbSet for each entity type that you want to include in your model. For more information 

@@ -15,18 +15,17 @@ using System.Windows.Shapes;
 namespace LojaSapatosWPF
 {
     /// <summary>
-    /// Lógica interna para WindowSapato.xaml
+    /// Lógica interna para WindowModelo.xaml
     /// </summary>
-    public partial class WindowSapato : Window
+    public partial class WindowModelo : Window
     {
-        public ViewModel.SapatoViewModel SapatoViewModel { get; set; }
         public ViewModel.ModeloViewModel ModeloViewModel { get; set;}
-        public WindowSapato()
+     
+    public WindowModelo()
         {
             InitializeComponent();
-            this.SapatoViewModel = new ViewModel.SapatoViewModel();
             this.ModeloViewModel = new ViewModel.ModeloViewModel();
-            this.DataContext = this.SapatoViewModel;
+            this.DataContext = this.ModeloViewModel;
         }
 
         private void btnVoltar_Click(object sender, RoutedEventArgs e)
@@ -36,23 +35,23 @@ namespace LojaSapatosWPF
 
         private void btnSalvar_Click(object sender, RoutedEventArgs e)
         {
-            SapatoViewModel.Salvar();
+            ModeloViewModel.Salvar();
         }
 
         private void btnAdicionar_Click(object sender, RoutedEventArgs e)
         {
-            SapatoViewModel.Adicionar();
+            ModeloViewModel.Adicionar();
+        }
+
+        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var x = e.AddedItems[0];
+            ModeloViewModel.ModeloSelecionado = (LojaSapatos.Modelo)x;
         }
 
         private void btnRemover_Click(object sender, RoutedEventArgs e)
         {
-            SapatoViewModel.Remover();
-        }
-
-        private void btnModelos_Click(object sender, RoutedEventArgs e)
-        {
-            Window windowModelo = new WindowModelo();
-            windowModelo.ShowDialog();
+            ModeloViewModel.Remover();
         }
     }
 }

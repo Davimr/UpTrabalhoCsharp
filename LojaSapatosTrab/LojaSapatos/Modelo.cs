@@ -10,7 +10,6 @@ namespace LojaSapatos
     public class Modelo
     {
         public int Id { get; set; }
-        //public Sapato Sapato { get; set; }
         public Boolean PossuiCadarco { get; set; }
         public String Material { get; set; }
         public String Cor { get; set; }

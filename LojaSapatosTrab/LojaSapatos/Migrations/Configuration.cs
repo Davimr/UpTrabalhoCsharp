@@ -98,6 +98,9 @@ namespace LojaSapatos.Migrations
 
             AdicionarVendaBanco(context, venda1);
 
+            AdicionarModeloBanco(context, modelo1);
+            AdicionarModeloBanco(context, modelo2);
+
             context.SaveChanges();
 
 
@@ -144,6 +147,18 @@ namespace LojaSapatos.Migrations
             if (venda == null)
             {
                 context.Vendas.Add(vend);
+            }
+        }
+
+        private static void AdicionarModeloBanco(SapatoModel context, Modelo model)
+        {
+            Modelo modelo =
+                            (from db in context.Modelos
+                             where db.Id == model.Id
+                             select db).FirstOrDefault();
+            if (modelo == null)
+            {
+                context.Modelos.Add(model);
             }
         }
     }
