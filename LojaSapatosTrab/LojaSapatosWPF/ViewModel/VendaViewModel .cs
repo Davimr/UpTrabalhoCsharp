@@ -20,7 +20,7 @@ namespace LojaSapatosWPF.ViewModel
             
             this.Cliente = new ClienteViewModel();
             this.ContextVenda = new SapatoModel();
-            this.Vendas = new ObservableCollection<Venda>(this.ContextVenda.Vendas.Include("ItemPedido").ToList());
+            this.Vendas = new ObservableCollection<Venda>(this.ContextVenda.Vendas.Include("Cliente").ToList());
 
            
             VendaSelecionada = this.Vendas.FirstOrDefault();
