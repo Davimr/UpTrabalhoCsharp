@@ -26,7 +26,7 @@
 
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <DataGrid Grid.Row="0" ItemsSource="{Binding Vendas}" AutoGenerateColumns="False" SelectionChanged="DataGrid_SelectionChanged">
+        <DataGrid Grid.Row="0" ItemsSource="{Binding Vendas}" AutoGenerateColumns="False" SelectionChanged="DataGrid_SelectionChanged" SelectedItem="{Binding VendaSelecionada}">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Id}" Header="Id" Width="auto" />
                 <DataGridTextColumn Binding="{Binding DataVenda}" Header="Data da Venda" Width="auto" />

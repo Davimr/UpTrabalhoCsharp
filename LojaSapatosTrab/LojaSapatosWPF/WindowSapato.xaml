@@ -27,7 +27,7 @@
 
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <DataGrid Grid.Row="0" ItemsSource="{Binding Sapatos}" AutoGenerateColumns="False">
+        <DataGrid Grid.Row="0" ItemsSource="{Binding Sapatos}" AutoGenerateColumns="False" SelectedItem="{Binding SapatoSelecionado}">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Marca}" Header="Marca" Width="auto"/>
             
