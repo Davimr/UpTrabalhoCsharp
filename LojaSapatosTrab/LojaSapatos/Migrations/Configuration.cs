@@ -106,10 +106,6 @@ namespace LojaSapatos.Migrations
             context.SaveChanges();
 
 
-
-
-
-
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
@@ -120,7 +116,7 @@ namespace LojaSapatos.Migrations
         {
             Pessoa pessoa =
                             (from db in context.Pessoas
-                             where db.Nome == p.Nome
+                             where db.Id == p.Id
                              select db).FirstOrDefault();
             if (pessoa == null)
             {

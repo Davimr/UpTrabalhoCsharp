@@ -42,8 +42,10 @@ namespace LojaSapatosWPF.ViewModel
 
         public void Remover()
         {
-            this.ContextVenda.Vendas.Remove(VendaSelecionada);
-            this.Vendas.Remove(VendaSelecionada);
+            var vendaDeletada = this.ContextVenda.Vendas.Find(VendaSelecionada.Id);
+            this.ContextVenda.Vendas.Remove(vendaDeletada);
+            this.Salvar();
+            this.Vendas = new ObservableCollection<Venda>(this.ContextVenda.Vendas.Include("Cliente").ToList());
             VendaSelecionada = this.Vendas.FirstOrDefault();
         }
     }

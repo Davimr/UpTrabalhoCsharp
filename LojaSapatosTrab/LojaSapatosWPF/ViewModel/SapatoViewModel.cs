@@ -36,8 +36,10 @@ namespace LojaSapatosWPF.ViewModel
 
         public void Remover()
         {
-            this.ContextSapato.Sapatos.Remove(SapatoSelecionado);
-            this.Sapatos.Remove(SapatoSelecionado);
+            var sapatoDelete = this.ContextSapato.Sapatos.Find(SapatoSelecionado.Id);
+            this.ContextSapato.Sapatos.Remove(sapatoDelete);
+            this.Salvar();
+            this.Sapatos = new ObservableCollection<Sapato>(this.ContextSapato.Sapatos.Include("Modelo").ToList());
             SapatoSelecionado = this.Sapatos.FirstOrDefault();
         }
     }
