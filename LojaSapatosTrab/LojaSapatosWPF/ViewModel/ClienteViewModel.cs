@@ -31,7 +31,16 @@ namespace LojaSapatosWPF.ViewModel
             Pessoa p = new Pessoa();
             this.Clientes.Add(p);
             ClienteSelecionado = p;
-            
+
+        }
+
+        public void AdicionarPessoaFisica()
+        {
+            this.Context.SaveChanges();
+            ClienteSelecionado = null;
+            Pessoa pFisica = new PessoaFisica();
+            this.Clientes.Add(pFisica);
+            ClienteSelecionado = pFisica;
         }
 
         public void Remover()

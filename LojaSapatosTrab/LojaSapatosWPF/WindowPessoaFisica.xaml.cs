@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LojaSapatos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,6 +29,7 @@ namespace LojaSapatosWPF
             this.DataContext = this;
             this.ClienteViewModel = new ViewModel.ClienteViewModel();
             this.VendaViewModel = new ViewModel.VendaViewModel();
+            this.rua.Text = Cliente.Endereco.Rua;
         }
 
         private void btnVoltar_Click(object sender, RoutedEventArgs e)
@@ -49,7 +51,11 @@ namespace LojaSapatosWPF
 
         private void btnAdicionar_Click(object sender, RoutedEventArgs e)
         {
-            ClienteViewModel.Adicionar();
+            this.ClienteViewModel.AdicionarPessoaFisica();
+            this.Cliente = (PessoaFisica)ClienteViewModel.ClienteSelecionado;
+            this.nome.Text = Cliente.Nome;
+            this.cpf.Text = Cliente.Cpf;
+            this.nascimento.SelectedDate = Cliente.DataNascimento;
         }
     }
 }

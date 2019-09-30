@@ -55,7 +55,7 @@ namespace LojaSapatosWPF
             else if (pessoa is PessoaJuridica)
             {
                 var PaginaEspecifica = new WindowPessoaJuridica();
-                PaginaEspecifica.Pessoa = (PessoaJuridica)pessoa;
+                PaginaEspecifica.Cliente = (PessoaJuridica)pessoa;
                 return PaginaEspecifica;
             }
             return null;
