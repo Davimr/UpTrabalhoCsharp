@@ -30,8 +30,10 @@ namespace LojaSapatosWPF.ViewModel
 
         public void Remover()
         {
-            this.ContextModelo.Modelos.Remove(ModeloSelecionado);
-            this.Modelos.Remove(ModeloSelecionado);
+            var modeloDelete = this.ContextModelo.Modelos.Find(ModeloSelecionado.Id);
+            this.ContextModelo.Modelos.Remove(modeloDelete);
+            this.Salvar();
+            Modelos = new ObservableCollection<Modelo>(ContextModelo.Modelos.ToList());
             ModeloSelecionado = this.Modelos.FirstOrDefault();
         }
 
