@@ -51,6 +51,7 @@ namespace LojaSapatos.Migrations
             };
             Modelo modelo1 = new Modelo()
             {
+                Nome = "Social",
                 Cor = "Preto",
                 Material = "Couro",
                 PossuiCadarco = false,
@@ -58,6 +59,7 @@ namespace LojaSapatos.Migrations
             };
             Modelo modelo2 = new Modelo()
             {
+                Nome = "Tênis",
                 Cor = "Branco",
                 Material = "Tecido",
                 PossuiCadarco = true,

@@ -36,6 +36,8 @@ namespace LojaSapatos
                 .HasRequired<Sapato>(i => i.Sapato)
                 .WithMany(s => s.ItensPedido)
                 .WillCascadeOnDelete(true);
+
+            
         }
 
 

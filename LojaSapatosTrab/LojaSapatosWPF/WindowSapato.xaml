@@ -33,7 +33,7 @@
             
                 <DataGridTextColumn Binding="{Binding Tamanho}" Header="Tamanho" Width="auto"/>
 
-                <DataGridTextColumn Binding="{Binding Modelo}" Header="Modelos" Width="auto"/>
+                <DataGridTextColumn Binding="{Binding Modelo.Nome}"  Header="Modelo" Width="auto"/>
             </DataGrid.Columns>
 
 

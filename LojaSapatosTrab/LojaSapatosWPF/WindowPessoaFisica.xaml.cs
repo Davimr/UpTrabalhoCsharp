@@ -29,7 +29,7 @@ namespace LojaSapatosWPF
             this.DataContext = this;
             this.ClienteViewModel = new ViewModel.ClienteViewModel();
             this.VendaViewModel = new ViewModel.VendaViewModel();
-            this.rua.Text = Cliente.Endereco.Rua;
+            //this.rua.Text = Cliente.Endereco.Rua;
         }
 
         private void btnVoltar_Click(object sender, RoutedEventArgs e)

@@ -15,6 +15,8 @@ namespace LojaSapatos
         public String Cor { get; set; }
         public Decimal Preco { get; set; }
         public String Fotografia { get; set; }
+        public String Nome { get; set; }
+
 
 
     }

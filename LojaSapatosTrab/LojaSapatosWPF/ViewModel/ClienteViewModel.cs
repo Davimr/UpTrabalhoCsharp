@@ -16,7 +16,7 @@ namespace LojaSapatosWPF.ViewModel
         public ClienteViewModel()
         {
             this.Context = new SapatoModel();
-            this.Clientes = new ObservableCollection<Pessoa>(this.Context.Pessoas.ToList());
+            this.Clientes = new ObservableCollection<Pessoa>(this.Context.Pessoas.Include("Endereco").ToList());
 
             ClienteSelecionado = this.Clientes.FirstOrDefault();
         }
