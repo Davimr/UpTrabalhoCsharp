@@ -48,6 +48,7 @@ namespace LojaSapatosWPF
         private void btnRemover_Click(object sender, RoutedEventArgs e)
         {
             SapatoViewModel.Remover();
+            this.Close();
         }
 
         private void btnModelos_Click(object sender, RoutedEventArgs e)

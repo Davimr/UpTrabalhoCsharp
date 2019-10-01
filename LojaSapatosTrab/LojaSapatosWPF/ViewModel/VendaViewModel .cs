@@ -36,7 +36,7 @@ namespace LojaSapatosWPF.ViewModel
             Venda venda = new LojaSapatos.Venda();
             this.Vendas.Add(venda);
             VendaSelecionada = venda;
-
+            this.ContextVenda.Vendas.Add(venda);
 
         }
 

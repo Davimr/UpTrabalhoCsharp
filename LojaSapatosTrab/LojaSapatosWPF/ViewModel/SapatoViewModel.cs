@@ -18,10 +18,9 @@ namespace LojaSapatosWPF.ViewModel
         public SapatoViewModel()
         {
             this.ContextSapato = new SapatoModel();
-            this.Sapatos = new ObservableCollection<Sapato>(this.ContextSapato.Sapatos.Include("Modelo").ToList());
-            this.Sapatos = new ObservableCollection<Sapato>(this.ContextSapato.Sapatos.Include("ItemEstoque").ToList());
+            this.Sapatos = new ObservableCollection<Sapato>(this.ContextSapato.Sapatos.Include("Modelo").Include("ItemEstoque").ToList());
             this.Modelos = new ObservableCollection<Modelo>(this.ContextSapato.Modelos.ToList());
-            SapatoSelecionado = this.Sapatos.FirstOrDefault();
+            this.SapatoSelecionado = this.ContextSapato.Sapatos.Include("Modelo").Include("ItemEstoque").ToList().FirstOrDefault();
         }
 
         public void Salvar()
@@ -36,7 +35,7 @@ namespace LojaSapatosWPF.ViewModel
             sapato.ItemEstoque = itemEstoque;
             this.Sapatos.Add(sapato);
             this.ContextSapato.Sapatos.Add(sapato);
-            SapatoSelecionado = sapato;
+            this.SapatoSelecionado = sapato;
 
         }
 
@@ -46,7 +45,7 @@ namespace LojaSapatosWPF.ViewModel
             this.ContextSapato.Sapatos.Remove(sapatoDelete);
             this.Salvar();
             this.Sapatos = new ObservableCollection<Sapato>(this.ContextSapato.Sapatos.Include("Modelo").ToList());
-            SapatoSelecionado = this.Sapatos.FirstOrDefault();
+            this.SapatoSelecionado = this.Sapatos.FirstOrDefault();
         }
     }
 }

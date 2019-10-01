@@ -26,6 +26,7 @@ namespace LojaSapatosWPF.ViewModel
             Modelo modelo = new Modelo();
             this.Modelos.Add(modelo);
             this.ModeloSelecionado = modelo;
+            this.ContextModelo.Modelos.Add(modelo);
         }
 
         public void Remover()
