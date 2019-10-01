@@ -12,12 +12,15 @@ namespace LojaSapatosWPF.ViewModel
     {
         public ObservableCollection<Sapato> Sapatos { get; set; }
         public Sapato SapatoSelecionado { get; set; }
+        public ObservableCollection<Modelo> Modelos { get; set; }
+
         private SapatoModel ContextSapato { get; set; }
         public SapatoViewModel()
         {
             this.ContextSapato = new SapatoModel();
             this.Sapatos = new ObservableCollection<Sapato>(this.ContextSapato.Sapatos.Include("Modelo").ToList());
-
+            this.Sapatos = new ObservableCollection<Sapato>(this.ContextSapato.Sapatos.Include("ItemEstoque").ToList());
+            this.Modelos = new ObservableCollection<Modelo>(this.ContextSapato.Modelos.ToList());
             SapatoSelecionado = this.Sapatos.FirstOrDefault();
         }
 
@@ -29,7 +32,10 @@ namespace LojaSapatosWPF.ViewModel
         public void Adicionar()
         {
             Sapato sapato = new LojaSapatos.Sapato();
+            ItemEstoque itemEstoque = new LojaSapatos.ItemEstoque();
+            sapato.ItemEstoque = itemEstoque;
             this.Sapatos.Add(sapato);
+            this.ContextSapato.Sapatos.Add(sapato);
             SapatoSelecionado = sapato;
 
         }

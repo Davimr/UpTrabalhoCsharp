@@ -36,6 +36,7 @@ namespace LojaSapatosWPF
         private void btnSalvar_Click(object sender, RoutedEventArgs e)
         {
             ModeloViewModel.Salvar();
+            this.Close();
         }
 
         private void btnAdicionar_Click(object sender, RoutedEventArgs e)

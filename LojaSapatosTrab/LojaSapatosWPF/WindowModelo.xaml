@@ -28,9 +28,9 @@
         </Grid.ColumnDefinitions>
         <DataGrid Grid.Row="0" ItemsSource="{Binding Modelos}" AutoGenerateColumns="False" SelectedItem="{Binding ModeloSelecionado}">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Material}" Header="Material" Width="auto"/>
-
                 <DataGridTextColumn Binding="{Binding Nome}" Header="Nome" Width="auto"/>
+
+                <DataGridTextColumn Binding="{Binding Material}" Header="Material" Width="auto"/>
 
                 <DataGridTextColumn Binding="{Binding Cor}" Header="Cor" Width="auto"/>
 

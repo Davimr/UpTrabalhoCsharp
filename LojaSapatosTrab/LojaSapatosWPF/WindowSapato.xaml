@@ -36,6 +36,8 @@
                 <DataGridTextColumn Binding="{Binding Modelo.Nome}"  Header="Modelo" Width="auto"/>
 
                 <DataGridTextColumn Binding="{Binding Modelo.Cor}"  Header="Cor" Width="auto"/>
+
+                <DataGridTextColumn Binding="{Binding ItemEstoque.Quantidade}"  Header="Qtd" Width="auto"/>
             </DataGrid.Columns>
 
 
@@ -49,8 +51,11 @@
 
         <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" Text="{Binding SapatoSelecionado.Marca}" VerticalAlignment="Top" Width="120"/>
         <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,38,0,0" TextWrapping="Wrap" Text="{Binding SapatoSelecionado.Tamanho}" VerticalAlignment="Top" Width="120"/>
-        <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,66,0,0" TextWrapping="Wrap" Text="{Binding SapatoSelecionado.Modelo.Nome}" VerticalAlignment="Top" Width="120"/>
+        <ComboBox ItemsSource="{Binding Modelos}" SelectedItem="{Binding SapatoSelecionado.Modelo}" DisplayMemberPath="Nome" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,66,0,0" VerticalAlignment="Top" Width="120"/>
+
         <Button  Content="Modelos" Grid.Column="1" HorizontalAlignment="Left" Margin="10,94,0,0" VerticalAlignment="Top" Width="120" Height="20" Click="btnModelos_Click"/>
+
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="266,10,0,0" TextWrapping="Wrap" Text="{Binding SapatoSelecionado.ItemEstoque.Quantidade}" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </Window>
