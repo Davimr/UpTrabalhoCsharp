@@ -47,6 +47,8 @@ namespace LojaSapatosWPF
         {
             ClienteViewModel.ClienteSelecionado = Cliente;
             ClienteViewModel.Remover();
+
+            this.Close();
         }
 
         private void btnAdicionar_Click(object sender, RoutedEventArgs e)

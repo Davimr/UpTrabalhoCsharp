@@ -45,8 +45,14 @@ namespace LojaSapatosWPF.ViewModel
 
         public void Remover()
         {
-            this.Context.Pessoas.Remove(ClienteSelecionado);
-            this.Clientes.Remove(ClienteSelecionado);
+            var pessoaDelecao = this.Context.Pessoas.Find(ClienteSelecionado.Id);
+
+            this.Context.Pessoas.Remove(pessoaDelecao);
+
+            this.Salvar();
+
+            this.Clientes = new ObservableCollection<Pessoa>(this.Context.Pessoas.Include("Endereco").ToList());
+
             ClienteSelecionado = this.Clientes.FirstOrDefault();
         }
     }
