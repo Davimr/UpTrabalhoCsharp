@@ -23,13 +23,14 @@ namespace LojaSapatosWPF
         public LojaSapatos.PessoaFisica Cliente { get; set; }
         public ViewModel.ClienteViewModel ClienteViewModel { get; set; }
         public ViewModel.VendaViewModel VendaViewModel { get; set; }
+        public Venda VendaSelecionada { get; set; }
+
         public WindowPessoaFisica()
         {
             InitializeComponent();
             this.DataContext = this;
             this.ClienteViewModel = new ViewModel.ClienteViewModel();
             this.VendaViewModel = new ViewModel.VendaViewModel();
-            //this.rua.Text = Cliente.Endereco.Rua;
         }
 
         private void btnVoltar_Click(object sender, RoutedEventArgs e)
@@ -39,7 +40,6 @@ namespace LojaSapatosWPF
 
         private void btnSalvar_Click(object sender, RoutedEventArgs e)
         {
-            ClienteViewModel.ClienteSelecionado = Cliente;
             ClienteViewModel.Salvar();
         }
 
@@ -51,13 +51,13 @@ namespace LojaSapatosWPF
             this.Close();
         }
 
-        private void btnAdicionar_Click(object sender, RoutedEventArgs e)
+        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            this.ClienteViewModel.AdicionarPessoaFisica();
-            this.Cliente = (PessoaFisica)ClienteViewModel.ClienteSelecionado;
-            this.nome.Text = Cliente.Nome;
-            this.cpf.Text = Cliente.Cpf;
-            this.nascimento.SelectedDate = Cliente.DataNascimento;
+            this.VendaSelecionada = new Venda();
+            this.VendaSelecionada = (LojaSapatos.Venda)e.AddedItems[0];
+            this.valorTotal.Text = VendaSelecionada.ValorTotal.ToString();
+            this.quantidadeTotal.Text = VendaSelecionada.QuantidadeTotal.ToString();
+            this.dataVenda.SelectedDate = VendaSelecionada.DataVenda;
         }
     }
 }

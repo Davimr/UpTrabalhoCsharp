@@ -60,6 +60,16 @@ namespace LojaSapatosWPF
             }
             return null;
         }
+
+        private void btnAddPessoaJuridica_Click(object sender, RoutedEventArgs e)
+        {
+            this.ClienteViewModel.AdicionarPessoaJuridica();
+        }
+
+        private void btnAddPessoaFisica_Click(object sender, RoutedEventArgs e)
+        {
+            this.ClienteViewModel.AdicionarPessoaFisica();
+        }
     }
 
 

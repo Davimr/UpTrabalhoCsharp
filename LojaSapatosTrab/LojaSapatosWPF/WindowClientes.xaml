@@ -25,7 +25,8 @@
             </DataGrid.Columns>
         </DataGrid>
         <Button Content="Voltar" Grid.Column="1" HorizontalAlignment="Left" Margin="311,364,0,0" VerticalAlignment="Top" Width="75" Height="20" Click="btnVoltar_Click"/>
-
+        <Button Content="Adicionar P.Fisica" Grid.Column="1" HorizontalAlignment="Left" Margin="231,364,0,0" VerticalAlignment="Top" Width="75" Height="20" Click="btnAddPessoaFisica_Click"/>
+        <Button Content="Adicionar P.Juridica" Grid.Column="1" HorizontalAlignment="Left" Margin="151,364,0,0" VerticalAlignment="Top" Width="75" Height="20" Click="btnAddPessoaJuridica_Click"/>
 
 
     </Grid>

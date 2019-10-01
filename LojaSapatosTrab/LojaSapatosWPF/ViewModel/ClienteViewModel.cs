@@ -16,9 +16,9 @@ namespace LojaSapatosWPF.ViewModel
         public ClienteViewModel()
         {
             this.Context = new SapatoModel();
-            this.Clientes = new ObservableCollection<Pessoa>(this.Context.Pessoas.Include("Endereco").ToList());
+            this.Clientes = new ObservableCollection<Pessoa>(this.Context.Pessoas.Include("Endereco").Include("Vendas").ToList());
 
-            ClienteSelecionado = this.Clientes.FirstOrDefault();
+            ClienteSelecionado = this.Context.Pessoas.Include("Endereco").ToList().FirstOrDefault();
         }
 
         public void Salvar()
@@ -26,21 +26,26 @@ namespace LojaSapatosWPF.ViewModel
             this.Context.SaveChanges();
         }
 
-        public void Adicionar()
-        {
-            Pessoa p = new Pessoa();
-            this.Clientes.Add(p);
-            ClienteSelecionado = p;
-
-        }
-
         public void AdicionarPessoaFisica()
         {
-            this.Context.SaveChanges();
             ClienteSelecionado = null;
             Pessoa pFisica = new PessoaFisica();
+            pFisica.Nome = "NovoFisica";
             this.Clientes.Add(pFisica);
             ClienteSelecionado = pFisica;
+            this.Context.Pessoas.Add(pFisica);
+            this.Context.SaveChanges();
+        }
+
+        public void AdicionarPessoaJuridica()
+        {
+            ClienteSelecionado = null;
+            Pessoa pJuridica = new PessoaJuridica();
+            pJuridica.Nome = "NovoJuridico";
+            this.Clientes.Add(pJuridica);
+            ClienteSelecionado = pJuridica;
+            this.Context.Pessoas.Add(pJuridica);
+            this.Context.SaveChanges();
         }
 
         public void Remover()
