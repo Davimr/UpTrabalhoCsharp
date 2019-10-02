@@ -12,7 +12,7 @@ namespace LojaSapatosWPF.ViewModel
     {
         public ObservableCollection<Venda> Vendas { get; set; }
         public Venda VendaSelecionada { get; set; }
-
+        public ObservableCollection<Sapato> Sapatos { get; set; }
         public ClienteViewModel Cliente { get; set; }
         private SapatoModel ContextVenda { get; set; }
         public VendaViewModel()
@@ -21,9 +21,9 @@ namespace LojaSapatosWPF.ViewModel
             this.Cliente = new ClienteViewModel();
             this.ContextVenda = new SapatoModel();
             this.Vendas = new ObservableCollection<Venda>(this.ContextVenda.Vendas.Include("Cliente").ToList());
+            this.Sapatos = new ObservableCollection<Sapato>(this.ContextVenda.Sapatos.Include("Modelo").Include("ItemEstoque").ToList());
 
-           
-            VendaSelecionada = this.Vendas.FirstOrDefault();
+            VendaSelecionada = this.ContextVenda.Vendas.Include("Cliente").ToList().FirstOrDefault();
         }
 
         public void Salvar()
@@ -34,6 +34,8 @@ namespace LojaSapatosWPF.ViewModel
         public void Adicionar()
         {
             Venda venda = new LojaSapatos.Venda();
+            Pessoa pessoa = new LojaSapatos.Pessoa();
+            venda.Cliente = pessoa;
             this.Vendas.Add(venda);
             VendaSelecionada = venda;
             this.ContextVenda.Vendas.Add(venda);
