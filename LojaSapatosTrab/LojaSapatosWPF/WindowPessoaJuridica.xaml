@@ -15,10 +15,8 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button Content="Salvar" Grid.Column="1" HorizontalAlignment="Left" Margin="151,180,0,0" VerticalAlignment="Top" Width="75" Click="btnSalvar_Click"/>
         <Button Content="Deletar" Grid.Column="1" HorizontalAlignment="Left" Margin="231,180,0,0" VerticalAlignment="Top" Width="75" Click="btnRemover_Click"/>
         <Button Content="Voltar" Grid.Column="1" HorizontalAlignment="Left" Margin="311,180,0,0" VerticalAlignment="Top" Width="75" Click="btnVoltar_Click"/>
-        <Button Content="Novo" Grid.Column="1" HorizontalAlignment="Left" Margin="71,180,0,0" VerticalAlignment="Top" Width="75" Click="btnAdicionar_Click"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="10,38,0,0" TextWrapping="Wrap" Text="{Binding Cliente.Cnpj}" VerticalAlignment="Top" Width="120"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" Text="{Binding Cliente.Nome}" VerticalAlignment="Top" Width="120"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="266,10,0,0" TextWrapping="Wrap" Text="{Binding Cliente.Endereco.Rua}" VerticalAlignment="Top" Width="120"/>
@@ -39,14 +37,12 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <TextBox x:Name="rua" HorizontalAlignment="Left" Height="23" Margin="266,10,0,0" TextWrapping="Wrap" Text="{Binding Cliente.Endereco.Rua}" VerticalAlignment="Top" Width="120"/>
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="266,38,0,0" TextWrapping="Wrap" Text="{Binding Cliente.Endereco.Numero}" VerticalAlignment="Top" Width="120"/>
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="266,66,0,0" TextWrapping="Wrap" Text="{Binding Cliente.Endereco.Complemento}" VerticalAlignment="Top" Width="120"/>
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="266,94,0,0" TextWrapping="Wrap" Text="{Binding Cliente.Endereco.Cep}" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="nome" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" Text="{Binding Cliente.Nome}" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="cpf" HorizontalAlignment="Left" Height="23" Margin="10,38,0,0" TextWrapping="Wrap" Text="{Binding Cliente.Cpf}" VerticalAlignment="Top" Width="120"/>
-            <DatePicker x:Name="nascimento" SelectedDate="{Binding Cliente.DataNascimento}" HorizontalAlignment="Left" Margin="10,66,0,0" VerticalAlignment="Top"/>
-            <Button Content="Salvar" Grid.Column="1" HorizontalAlignment="Left" Margin="151,180,0,0" VerticalAlignment="Top" Width="75" Click="btnSalvar_Click"/>
+            <TextBox x:Name="rua" ToolTip="Rua" HorizontalAlignment="Left" Height="23" Margin="266,10,0,0" TextWrapping="Wrap" Text="{Binding Cliente.Endereco.Rua}" VerticalAlignment="Top" Width="120"/>
+            <TextBox HorizontalAlignment="Left" ToolTip="Numero" Height="23" Margin="266,38,0,0" TextWrapping="Wrap" Text="{Binding Cliente.Endereco.Numero}" VerticalAlignment="Top" Width="120"/>
+            <TextBox HorizontalAlignment="Left" ToolTip="Bairro" Height="23" Margin="266,66,0,0" TextWrapping="Wrap" Text="{Binding Cliente.Endereco.Complemento}" VerticalAlignment="Top" Width="120"/>
+            <TextBox HorizontalAlignment="Left" ToolTip="Complemento" Height="23" Margin="266,94,0,0" TextWrapping="Wrap" Text="{Binding Cliente.Endereco.Cep}" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="nome" ToolTip="Nome" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" Text="{Binding Cliente.Nome}" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="cnpj" ToolTip="Cnpj" HorizontalAlignment="Left" Height="23" Margin="10,38,0,0" TextWrapping="Wrap" Text="{Binding Cliente.Cpf}" VerticalAlignment="Top" Width="120"/>
             <Button Content="Deletar" Grid.Column="1" HorizontalAlignment="Left" Margin="231,180,0,0" VerticalAlignment="Top" Width="75" Click="btnRemover_Click"/>
             <Button Content="Voltar" Grid.Column="1" HorizontalAlignment="Left" Margin="311,180,0,0" VerticalAlignment="Top" Width="75" Click="btnVoltar_Click"/>
             <DataGrid HorizontalAlignment="Left" Height="209" Grid.Row="1" VerticalAlignment="Top" Width="396" ItemsSource="{Binding Cliente.Vendas}" SelectionChanged="DataGrid_SelectionChanged">

@@ -19,14 +19,14 @@
 
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <DataGrid Grid.Row="0" ItemsSource="{Binding Clientes}" AutoGenerateColumns="False" SelectionChanged="DataGrid_SelectionChanged">
+        <DataGrid Grid.Row="0" ItemsSource="{Binding Clientes}" AutoGenerateColumns="False" SelectionChanged="DataGrid_SelectionChanged" Width="380">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Nome}" Header="Clientes" Width="auto"/>
+                <DataGridTextColumn Binding="{Binding Nome}" Header="Clientes" Width="400"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Voltar" Grid.Column="1" HorizontalAlignment="Left" Margin="311,364,0,0" VerticalAlignment="Top" Width="75" Height="20" Click="btnVoltar_Click"/>
-        <Button Content="Adicionar P.Fisica" Grid.Column="1" HorizontalAlignment="Left" Margin="231,364,0,0" VerticalAlignment="Top" Width="75" Height="20" Click="btnAddPessoaFisica_Click"/>
-        <Button Content="Adicionar P.Juridica" Grid.Column="1" HorizontalAlignment="Left" Margin="151,364,0,0" VerticalAlignment="Top" Width="75" Height="20" Click="btnAddPessoaJuridica_Click"/>
+        <Button Content="Voltar e salvar" Grid.Column="1" HorizontalAlignment="Left" Margin="293,364,0,0" VerticalAlignment="Top" Width="93" Height="20" Click="btnVoltar_Click"/>
+        <Button Content="Adicionar P.Fisica" Grid.Column="1" HorizontalAlignment="Left" Margin="186,364,0,0" VerticalAlignment="Top" Width="102" Height="20" Click="btnAddPessoaFisica_Click"/>
+        <Button Content="Adicionar P.Juridica" Grid.Column="1" HorizontalAlignment="Left" Margin="64,364,0,0" VerticalAlignment="Top" Width="117" Height="20" Click="btnAddPessoaJuridica_Click"/>
 
 
     </Grid>

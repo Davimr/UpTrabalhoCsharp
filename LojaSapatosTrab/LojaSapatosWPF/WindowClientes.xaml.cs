@@ -30,6 +30,7 @@ namespace LojaSapatosWPF
 
         private void btnVoltar_Click(object sender, RoutedEventArgs e)
         {
+            ClienteViewModel.Salvar();
             this.Close();
         }
 
