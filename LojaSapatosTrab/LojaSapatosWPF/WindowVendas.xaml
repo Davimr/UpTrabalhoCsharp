@@ -26,7 +26,7 @@
 
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <DataGrid Grid.Row="0" ItemsSource="{Binding Vendas}" AutoGenerateColumns="False" SelectionChanged="DataGrid_SelectionChanged" SelectedItem="{Binding VendaSelecionada}">
+        <DataGrid Grid.Row="0" ItemsSource="{Binding Vendas}" AutoGenerateColumns="False" SelectedItem="{Binding VendaSelecionada}">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Id}" Header="Id" Width="auto" />
                 <DataGridTextColumn Binding="{Binding DataVenda}" Header="Data da Venda" Width="auto" />
@@ -34,6 +34,8 @@
                 <DataGridTextColumn Binding="{Binding QuantidadeTotal}" Header="Qtd" Width="auto" />
 
                 <DataGridTextColumn Binding="{Binding Cliente.Nome}" Header="Cliente" Width="auto" />
+
+                <DataGridTextColumn Binding="{Binding ItensPedido.Sapato.Modelo.Nome}" Header="Produto" Width="auto" />
             </DataGrid.Columns>
         </DataGrid>
 
@@ -43,10 +45,10 @@
         <Button Content="Voltar" Grid.Column="1" HorizontalAlignment="Left" Margin="311,14,0,-5" Grid.Row="3" VerticalAlignment="Top" Width="75" Height="20" Grid.RowSpan="4" Click="btnVoltar_Click"/>
 
 
-        <DatePicker Grid.Column="1" HorizontalAlignment="Left"  Height="23" Margin="10,10,0,0" SelectedDate="{Binding VendaSelecionada.DataVenda}" VerticalAlignment="Top" x:Name="DataVenda" Width="120"/>
-        <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,38,0,0" TextWrapping="Wrap" Text="{Binding VendaSelecionada.QuantidadeTotal}" VerticalAlignment="Top" Width="120"/>
-        <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,66,0,0" TextWrapping="Wrap" Text="{Binding VendaSelecionada.ValorTotal}" VerticalAlignment="Top" Width="120"/>
-        
-
+        <DatePicker ToolTip="Data da Venda" Grid.Column="1" HorizontalAlignment="Left"  Height="23" Margin="10,10,0,0" SelectedDate="{Binding VendaSelecionada.DataVenda}" VerticalAlignment="Top" x:Name="DataVenda" Width="120"/>
+        <TextBox ToolTip="Quantidade Total" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,38,0,0" TextWrapping="Wrap" Text="{Binding VendaSelecionada.QuantidadeTotal}" VerticalAlignment="Top" Width="120"/>
+        <TextBox ToolTip="Valor Total"  Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,66,0,0" TextWrapping="Wrap" Text="{Binding VendaSelecionada.ValorTotal}" VerticalAlignment="Top" Width="120"/>
+        <ComboBox ItemsSource="{Binding VendaSelecionada.ItensPedido}" SelectedItem="{Binding Sapato.Modelo}" DisplayMemberPath="Nome" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,94,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox ToolTip="Cliente"  Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,122,0,0" TextWrapping="Wrap" Text="{Binding VendaSelecionada.Cliente.Nome}" VerticalAlignment="Top" Width="120"/>
     </Grid>
 </Window>
