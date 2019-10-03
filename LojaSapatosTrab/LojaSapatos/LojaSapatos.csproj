@@ -97,6 +97,14 @@
     <Compile Include="Migrations\201909302232256_201930091932.Designer.cs">
       <DependentUpon>201909302232256_201930091932.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910030000443_aula0210.cs" />
+    <Compile Include="Migrations\201910030000443_aula0210.Designer.cs">
+      <DependentUpon>201910030000443_aula0210.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910030005119_aula02102105.cs" />
+    <Compile Include="Migrations\201910030005119_aula02102105.Designer.cs">
+      <DependentUpon>201910030005119_aula02102105.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PessoaJuridica .cs" />
     <Compile Include="PessoaFisica .cs" />
@@ -146,6 +154,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909302232256_201930091932.resx">
       <DependentUpon>201909302232256_201930091932.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910030000443_aula0210.resx">
+      <DependentUpon>201910030000443_aula0210.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910030005119_aula02102105.resx">
+      <DependentUpon>201910030005119_aula02102105.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

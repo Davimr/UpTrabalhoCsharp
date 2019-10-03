@@ -8,6 +8,6 @@ namespace LojaSapatos
     {
         public int Id { get; set; }
         public string Cpf { get; set; }
-        public DateTime DataNascimento { get; set; }
+        public DateTime? DataNascimento { get; set; }
     }
 }

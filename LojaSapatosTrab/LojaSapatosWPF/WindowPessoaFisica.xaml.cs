@@ -38,11 +38,6 @@ namespace LojaSapatosWPF
             this.Close();
         }
 
-        private void btnSalvar_Click(object sender, RoutedEventArgs e)
-        {
-            ClienteViewModel.Salvar();
-        }
-
         private void btnRemover_Click(object sender, RoutedEventArgs e)
         {
             ClienteViewModel.ClienteSelecionado = Cliente;

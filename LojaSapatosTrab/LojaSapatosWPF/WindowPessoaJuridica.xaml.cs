@@ -32,12 +32,6 @@ namespace LojaSapatosWPF
             this.VendaViewModel = new ViewModel.VendaViewModel();
         }
 
-        private void btnSalvar_Click(object sender, RoutedEventArgs e)
-        {
-            ClienteViewModel.ClienteSelecionado = Cliente;
-            ClienteViewModel.Salvar();
-        }
-
         private void btnRemover_Click(object sender, RoutedEventArgs e)
         {
             ClienteViewModel.ClienteSelecionado = Cliente;
@@ -49,11 +43,6 @@ namespace LojaSapatosWPF
         private void btnVoltar_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
-        }
-
-        private void btnAdicionar_Click(object sender, RoutedEventArgs e)
-        {
-
         }
 
         private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
